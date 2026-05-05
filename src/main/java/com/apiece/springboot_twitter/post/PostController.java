@@ -1,5 +1,6 @@
 package com.apiece.springboot_twitter.post;
 
+import com.apiece.springboot_twitter.comment.CommentRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
@@ -55,9 +56,9 @@ public class PostController {
     }
 
     @PostMapping("/api/posts")
-    public ResponseEntity<Post> createPost(@RequestBody PostCreateRequest request) {
+    public ResponseEntity<Post> createPost(@RequestBody CommentRequest request) {
         Post newPost = Post.builder()
-                .content(request.getContent())
+                .content(request.content())
                 .build();
 
         Post savedPost = repository.save(newPost);
