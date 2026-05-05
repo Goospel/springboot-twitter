@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/springboot-twitter-linux-latest .
+        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/springboot-twitter-linux:latest .
 
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/springboot-twitter-linux:latest
