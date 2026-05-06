@@ -19,7 +19,6 @@ public class CommentService {
 
     private final CommentRepository commentRepository;
     private final PostRepository postRepository;
-    private final RepositoryMethodInvocationListener repositoryMethodInvocationListener;
 
     public CommentResponse createComment(Long postId, CommentRequest request) {
         Post post = postRepository.findById(postId)
